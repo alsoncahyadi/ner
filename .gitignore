@@ -4,5 +4,5 @@ obj/
 # reports
 report/
 
-# precompiled python
 *.pyc
+*.ods
