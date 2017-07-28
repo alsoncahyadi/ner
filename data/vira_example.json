@@ -1,0 +1,482 @@
+[
+  {
+    "text" : " ke 081288304059",
+    "entities" : [
+      {
+        "entity" : "answer",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081288304059\"",
+        "role" : "answered_phone_number",
+        "start" : 4,
+        "end" : 16
+      }
+    ]
+  },
+  {
+    "text" : " Halo",
+    "entities" : [
+      {
+        "entity" : "greetings",
+        "value" : "\"true\""
+      }
+    ]
+  },
+  {
+    "text" : "Eh 20k aja, ke 081212345678",
+    "entities" : [
+      {
+        "entity" : "replace",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "nominal",
+        "value" : "\"20k\"",
+        "role" : "substitute_nominal",
+        "start" : 3,
+        "end" : 6
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081212345678\"",
+        "role" : "substitute_phone_number",
+        "start" : 15,
+        "end" : 27
+      }
+    ]
+  },
+  {
+    "text" : " ke 081288304059",
+    "entities" : [
+      {
+        "entity" : "answer",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081288304059\"",
+        "role" : "answered_phone_number",
+        "start" : 4,
+        "end" : 16
+      }
+    ]
+  },
+  {
+    "text" : " Halo",
+    "entities" : [
+      {
+        "entity" : "greetings",
+        "value" : "\"true\""
+      }
+    ]
+  },
+  {
+    "text" : "Eh 20k aja, ke 081212345678",
+    "entities" : [
+      {
+        "entity" : "replace",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "nominal",
+        "value" : "\"20k\"",
+        "role" : "substitute_nominal",
+        "start" : 3,
+        "end" : 6
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081212345678\"",
+        "role" : "substitute_phone_number",
+        "start" : 15,
+        "end" : 27
+      }
+    ]
+  },
+  {
+    "text" : " ke 081288304059",
+    "entities" : [
+      {
+        "entity" : "answer",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081288304059\"",
+        "role" : "answered_phone_number",
+        "start" : 4,
+        "end" : 16
+      }
+    ]
+  },
+  {
+    "text" : " Halo",
+    "entities" : [
+      {
+        "entity" : "greetings",
+        "value" : "\"true\""
+      }
+    ]
+  },
+  {
+    "text" : "Eh 20k aja, ke 081212345678",
+    "entities" : [
+      {
+        "entity" : "replace",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "nominal",
+        "value" : "\"20k\"",
+        "role" : "substitute_nominal",
+        "start" : 3,
+        "end" : 6
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081212345678\"",
+        "role" : "substitute_phone_number",
+        "start" : 15,
+        "end" : 27
+      }
+    ]
+  },
+  {
+    "text" : " ke 081288304059",
+    "entities" : [
+      {
+        "entity" : "answer",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081288304059\"",
+        "role" : "answered_phone_number",
+        "start" : 4,
+        "end" : 16
+      }
+    ]
+  },
+  {
+    "text" : " Halo",
+    "entities" : [
+      {
+        "entity" : "greetings",
+        "value" : "\"true\""
+      }
+    ]
+  },
+  {
+    "text" : "Eh 20k aja, ke 081212345678",
+    "entities" : [
+      {
+        "entity" : "replace",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "nominal",
+        "value" : "\"20k\"",
+        "role" : "substitute_nominal",
+        "start" : 3,
+        "end" : 6
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081212345678\"",
+        "role" : "substitute_phone_number",
+        "start" : 15,
+        "end" : 27
+      }
+    ]
+  },
+  {
+    "text" : " ke 081288304059",
+    "entities" : [
+      {
+        "entity" : "answer",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081288304059\"",
+        "role" : "answered_phone_number",
+        "start" : 4,
+        "end" : 16
+      }
+    ]
+  },
+  {
+    "text" : " Halo",
+    "entities" : [
+      {
+        "entity" : "greetings",
+        "value" : "\"true\""
+      }
+    ]
+  },
+  {
+    "text" : "Eh 20k aja, ke 081212345678",
+    "entities" : [
+      {
+        "entity" : "replace",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "nominal",
+        "value" : "\"20k\"",
+        "role" : "substitute_nominal",
+        "start" : 3,
+        "end" : 6
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081212345678\"",
+        "role" : "substitute_phone_number",
+        "start" : 15,
+        "end" : 27
+      }
+    ]
+  },
+  {
+    "text" : " ke 081288304059",
+    "entities" : [
+      {
+        "entity" : "answer",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081288304059\"",
+        "role" : "answered_phone_number",
+        "start" : 4,
+        "end" : 16
+      }
+    ]
+  },
+  {
+    "text" : " Halo",
+    "entities" : [
+      {
+        "entity" : "greetings",
+        "value" : "\"true\""
+      }
+    ]
+  },
+  {
+    "text" : "Eh 20k aja, ke 081212345678",
+    "entities" : [
+      {
+        "entity" : "replace",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "nominal",
+        "value" : "\"20k\"",
+        "role" : "substitute_nominal",
+        "start" : 3,
+        "end" : 6
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081212345678\"",
+        "role" : "substitute_phone_number",
+        "start" : 15,
+        "end" : 27
+      }
+    ]
+  },
+  {
+    "text" : " ke 081288304059",
+    "entities" : [
+      {
+        "entity" : "answer",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081288304059\"",
+        "role" : "answered_phone_number",
+        "start" : 4,
+        "end" : 16
+      }
+    ]
+  },
+  {
+    "text" : " Halo",
+    "entities" : [
+      {
+        "entity" : "greetings",
+        "value" : "\"true\""
+      }
+    ]
+  },
+  {
+    "text" : "Eh 20k aja, ke 081212345678",
+    "entities" : [
+      {
+        "entity" : "replace",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "nominal",
+        "value" : "\"20k\"",
+        "role" : "substitute_nominal",
+        "start" : 3,
+        "end" : 6
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081212345678\"",
+        "role" : "substitute_phone_number",
+        "start" : 15,
+        "end" : 27
+      }
+    ]
+  },
+  {
+    "text" : " ke 081288304059",
+    "entities" : [
+      {
+        "entity" : "answer",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081288304059\"",
+        "role" : "answered_phone_number",
+        "start" : 4,
+        "end" : 16
+      }
+    ]
+  },
+  {
+    "text" : " Halo",
+    "entities" : [
+      {
+        "entity" : "greetings",
+        "value" : "\"true\""
+      }
+    ]
+  },
+  {
+    "text" : "Eh 20k aja, ke 081212345678",
+    "entities" : [
+      {
+        "entity" : "replace",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "nominal",
+        "value" : "\"20k\"",
+        "role" : "substitute_nominal",
+        "start" : 3,
+        "end" : 6
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081212345678\"",
+        "role" : "substitute_phone_number",
+        "start" : 15,
+        "end" : 27
+      }
+    ]
+  },
+  {
+    "text" : " ke 081288304059",
+    "entities" : [
+      {
+        "entity" : "answer",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081288304059\"",
+        "role" : "answered_phone_number",
+        "start" : 4,
+        "end" : 16
+      }
+    ]
+  },
+  {
+    "text" : " Halo",
+    "entities" : [
+      {
+        "entity" : "greetings",
+        "value" : "\"true\""
+      }
+    ]
+  },
+  {
+    "text" : "Eh 20k aja, ke 081212345678",
+    "entities" : [
+      {
+        "entity" : "replace",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "nominal",
+        "value" : "\"20k\"",
+        "role" : "substitute_nominal",
+        "start" : 3,
+        "end" : 6
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081212345678\"",
+        "role" : "substitute_phone_number",
+        "start" : 15,
+        "end" : 27
+      }
+    ]
+  },
+  {
+    "text" : " ke 081288304059",
+    "entities" : [
+      {
+        "entity" : "answer",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081288304059\"",
+        "role" : "answered_phone_number",
+        "start" : 4,
+        "end" : 16
+      }
+    ]
+  },
+  {
+    "text" : " Halo",
+    "entities" : [
+      {
+        "entity" : "greetings",
+        "value" : "\"true\""
+      }
+    ]
+  },
+  {
+    "text" : "Eh 20k aja, ke 081212345678",
+    "entities" : [
+      {
+        "entity" : "replace",
+        "value" : "\"true\""
+      },
+      {
+        "entity" : "nominal",
+        "value" : "\"20k\"",
+        "role" : "substitute_nominal",
+        "start" : 3,
+        "end" : 6
+      },
+      {
+        "entity" : "phone_number",
+        "value" : "\"081212345678\"",
+        "role" : "substitute_phone_number",
+        "start" : 15,
+        "end" : 27
+      }
+    ]
+  },
+]

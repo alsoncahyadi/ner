@@ -1,0 +1,8 @@
+# objects
+obj/
+
+# reports
+report/
+
+# precompiled python
+*.pyc

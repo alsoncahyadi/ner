@@ -1,0 +1,5 @@
+[(('I', 'PRP'), 'O'), (('want', 'VBP'), 'O'), (('to', 'TO'), 'O'), (('know', 'VB'), 'O'), (('the', 'DT'), 'O'), (('schedule', 'NN'), 'O'), (('of', 'IN'), 'O'), (('Wonder', 'NNP'), 'B-movie_title'), (('Woman', 'NNP'), 'I-movie_title')]
+[(('The', 'DT'), 'O'), (('schedule', 'NN'), 'O'), (('for', 'IN'), 'O'), (('pirates', 'NNS'), 'B-movie_title'), (('of', 'IN'), 'I-movie_title'), (('caribbean', 'JJ'), 'I-movie_title'), (('please', 'NN'), 'O')]
+[(('the', 'DT'), 'O'), (('schedule', 'NN'), 'O'), (('for', 'IN'), 'O'), (('wonder', 'JJR'), 'B-movie_title'), (('woman', 'NN'), 'I-movie_title'), (('please', 'NN'), 'O')]
+[(('the', 'DT'), 'O'), (('schedule', 'NN'), 'O'), (('for', 'IN'), 'O'), (('logan', 'JJ'), 'B-movie_title'), (('please', 'NN'), 'O')]
+[(('the', 'DT'), 'O'), (('schedule', 'NN'), 'O'), (('for', 'IN'), 'O'), (('the', 'DT'), 'B-movie_title'), (('three', 'CD'), 'I-movie_title'), (('idiots', 'NNS'), 'I-movie_title'), (('please', 'VB'), 'O')]
