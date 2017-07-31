@@ -25,18 +25,25 @@ class TrainCRFOnVira:
             => The tested accuracy will be saved as the attribute 'test_score'
     """
 
-    def __init__(self, vira_json_file_path, train_size, test_size):
+    def __init__(self, vira_json_file_path, train_size_percentage):
+        """
+        :param vira_json_file_path: The file path to the json file
+        :param train_size_percentage: train size percentage. The test size percentage would be 1 - train_size_percentage
+        """
         self.vira_adapter = ViraAdapter()
         self.vira_json_file_path = vira_json_file_path
         self.iob_sentences = self.vira_adapter.jsonfile2iobsentences(vira_json_file_path)
 
-        self._train_size = train_size
-        self._test_size = test_size
-        self._sampling_index_list = random.sample(range(len(self.iob_sentences)), train_size  + test_size)
+        self._train_size_percentage = train_size_percentage
+        self._test_size_percentage = 1 - train_size_percentage
+        self._train_size = int(self._train_size_percentage * len(self.iob_sentences))
+        self._test_size = len(self.iob_sentences) - self._train_size
+        self._sampling_index_list = random.sample(range(len(self.iob_sentences)), len(self.iob_sentences))
 
         self.data_train = []
         self.data_test = []
         self._initialize_data()
+
 
         self._crf = None
         self.accuracy = -1
@@ -164,7 +171,7 @@ class TrainCRFOnVira:
             n_iter => iterations of different hyper parameters
         :return:
         """
-        print("\n=== CROSS VALIDATING {} DATA WITH k: {} ===".format(len(self.data_train), kwargs.get('k', 4)))
+        print("\n=== CROSS VALIDATING {} DATA WITH k: {} ===".format(len(self.data_train), kwargs.get('k', 5)))
         print(" > Extracting features")
         X_train, y_train = self._to_dataset(self.data_train, ner_features)
         print(" > Start training. . .")
@@ -190,7 +197,7 @@ class TrainCRFOnVira:
 
         # search
         rs = RandomizedSearchCV(crf, params_space,
-                                cv=kwargs.get('k', 4),
+                                cv=kwargs.get('k', 5),
                                 verbose=1,
                                 n_jobs=-1,
                                 n_iter=kwargs.get('n_iter', 10),
@@ -259,10 +266,17 @@ class TrainCRFOnVira:
 
 
 if __name__ == "__main__":
-    vira_trainer = TrainCRFOnVira("data/vira_example.json", 22, 8)
+    vira_trainer = TrainCRFOnVira("data/vira_example.json", 0.8)
+    """
+    Choose either <b>ONE</b> of vira_trainer.train() or vira_trainer.train_with_RandomizeSearchCV
+    : vira_trainer.train() : This is a normal trainer
+    : vira_trainer.train_with_RandomizeSearchCV : This is a parameter optimizer, AND cross validator.
+                                                  For full lists of modifieable variables, read the documentation
+                                                  under it's declaration.
+                                                  The default is:
+                                                    k       : 5
+                                                    n_iter  : 10
+    """
     vira_trainer.train()
+    # vira_trainer.train_with_RandomizeSearchCV()
     vira_trainer.test()
-
-
-
-

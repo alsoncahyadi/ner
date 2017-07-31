@@ -15,6 +15,9 @@ NUM_THREAD = 4
 """
     Python version: 3.5.3
     DEPENDENCIES:
+        sudo apt install libicu-dev
+        pip install pyicu
+    
         pip install polyglot
         pip install sklearn_crfsuite
         pip install scipy
@@ -22,6 +25,8 @@ NUM_THREAD = 4
         pip install dill
         pip install nltk
         pip install Sastrawi
+        
+        polyglot download embeddings2.id pos2.id
 """
 
 def print_transitions(trans_features):
