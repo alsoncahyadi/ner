@@ -1,6 +1,6 @@
 [
   {
-    "text" : " ke 081288304059",
+    "text" : "081288304059",
     "entities" : [
       {
         "entity" : "answer",
@@ -10,8 +10,8 @@
         "entity" : "phone_number",
         "value" : "\"081288304059\"",
         "role" : "answered_phone_number",
-        "start" : 4,
-        "end" : 16
+        "start" : 0,
+        "end" : 12
       }
     ]
   },
@@ -432,7 +432,7 @@
     ]
   },
   {
-    "text" : " ke 081288304059",
+    "text" : "081288304059",
     "entities" : [
       {
         "entity" : "answer",
@@ -442,8 +442,8 @@
         "entity" : "phone_number",
         "value" : "\"081288304059\"",
         "role" : "answered_phone_number",
-        "start" : 4,
-        "end" : 16
+        "start" : 0,
+        "end" : 12
       }
     ]
   },

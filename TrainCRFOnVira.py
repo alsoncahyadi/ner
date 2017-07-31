@@ -129,7 +129,7 @@ class TrainCRFOnVira:
             predicted_entities = get_entities_from_iob_tagged_tokens(predicted_iob_tokens)
 
             report_str = "================================= Sentence #{} ========================================\n".\
-                format(i)
+                format(start_index + i)
             report_str += "> Text: '{}'\n\n".format(" ".join(words))
             report_str += " ## ACTUAL ##\n"
             report_str += "> IOB tagged tokens:\n{}\n".format(str(iob_tagged_tokens))

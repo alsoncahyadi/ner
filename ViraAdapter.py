@@ -78,7 +78,7 @@ class ViraAdapter:
             # print("===", i, "===")
             soup = BeautifulSoup(content, "lxml")
             soup = soup.body
-            if soup.p:
+            if soup.find_all('p'):
                 soup = soup.p
             cnt = 0
             words, pos_tags = [], []
