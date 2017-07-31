@@ -38,6 +38,8 @@ class TrainCRFOnVira:
         self._test_size_percentage = 1 - train_size_percentage
         self._train_size = int(self._train_size_percentage * len(self.iob_sentences))
         self._test_size = len(self.iob_sentences) - self._train_size
+        #for consistent train and test
+        random.seed(0)
         self._sampling_index_list = random.sample(range(len(self.iob_sentences)), len(self.iob_sentences))
 
         self.data_train = []
@@ -121,12 +123,18 @@ class TrainCRFOnVira:
     def _score_sentences_thread(self, index, results, iob_tagged_datatest, y_pred, start_index, end_index):
         total_entities = 0
         correct_entities = 0
-        for i, iob_tagged_tokens in enumerate(iob_tagged_datatest[start_index: end_index]):
+        print(start_index, ":", end_index)
+        for i, iob_tagged_tokens in enumerate(iob_tagged_datatest[start_index:end_index]):
             words, tags, iob_tags = list(zip(*iob_tagged_tokens))
-            predicted_iob_tokens = list(zip(words, tags, y_pred[i]))
+            predicted_iob_tokens = list(zip(words, tags, y_pred[start_index + i]))
+
+            words = list(words)
+            tags = list(tags)
+            iob_tags = list(iob_tags)
 
             datatest_entities = get_entities_from_iob_tagged_tokens(iob_tagged_tokens)
             predicted_entities = get_entities_from_iob_tagged_tokens(predicted_iob_tokens)
+
 
             report_str = "================================= Sentence #{} ========================================\n".\
                 format(start_index + i)
@@ -138,12 +146,20 @@ class TrainCRFOnVira:
             report_str += "> IOB tagged tokens:\n{}\n".format(predicted_iob_tokens)
             report_str += "> Entities:\n{}\n".format(predicted_entities)
             report_str += "======================================================================================\n\n"
-            self.prediction_reports[start_index + i] = report_str
 
+            is_predicted_true = True
             total_entities += len(datatest_entities)
             for datatest_entity in datatest_entities:
                 if datatest_entity in predicted_entities:
                     correct_entities += 1
+                else:
+                    is_predicted_true = False
+
+
+            self.prediction_reports[start_index + i] = {
+                'report_text': report_str,
+                'is_predicted_true': is_predicted_true
+            }
 
         results[index] = (total_entities, correct_entities)
 
@@ -269,11 +285,21 @@ class TrainCRFOnVira:
         print(self._bio_classification_report(crf, y_test, y_pred))
         master_end_time = time.time()
         print(" > Testing done in {} seconds".format(master_end_time - master_begin_time))
-        report_path = kwargs.get('report_path', 'report.txt')
-        with open(report_path, 'w') as report_file:
+
+        # Write report text
+        report_folder_path = kwargs.get('report_folder_path', 'report.txt')
+        with open(report_folder_path + "/true.txt", 'w') as true_report_file:
             for prediction_report in self.prediction_reports:
-                report_file.write(prediction_report)
-        print(" > Report file saved in {}".format(report_path))
+                if prediction_report['is_predicted_true']:
+                    true_report_file.write(prediction_report['report_text'])
+        with open(report_folder_path + "/false.txt", 'w') as false_report_file:
+            for prediction_report in self.prediction_reports:
+                if not prediction_report['is_predicted_true']:
+                    false_report_file.write(prediction_report['report_text'])
+        with open(report_folder_path + "/all.txt", 'w') as all_report_file:
+            for prediction_report in self.prediction_reports:
+                all_report_file.write(prediction_report['report_text'])
+        print(" > Report file saved in {} folder".format(report_folder_path))
 
 
 if __name__ == "__main__":
@@ -292,5 +318,5 @@ if __name__ == "__main__":
     # vira_trainer.train_with_RandomizeSearchCV()
     vira_trainer.test(
         print_to_text=True,
-        report_path='report.txt'
+        report_folder_path='report_vira/'
     )
