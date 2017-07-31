@@ -122,7 +122,7 @@ def score_sentences_thread(index, results, iob_tagged_datatest, y_pred):
     results[index] = (total_entities, correct_entities)
 
 
-def my_modified_crfsuite_scorer(crf, iob_tagged_datatest, feature_detector):
+def my_modified_crfsuite_scorer(crf, iob_tagged_datatest, feature_detector, **kwargs):
     print(" >> Converting to data test")
     X_test, y_test = to_dataset(iob_tagged_datatest, feature_detector)
     print(" >> Predicting labels")
@@ -222,7 +222,7 @@ def k_fold_validation(data_train, model_file_path, **kwargs):
     print(" > Model saved in {}".format(model_file_path))
 
 
-def test(data_test, model_file_path, feature_detector):
+def test(data_test, model_file_path, feature_detector, **kwargs):
     print("\n=== TESTING {} DATA ===".format(len(data_test)))
     crf = load_object(model_file_path)
     master_begin_time = time.time()

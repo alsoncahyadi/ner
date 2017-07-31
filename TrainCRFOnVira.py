@@ -43,6 +43,7 @@ class TrainCRFOnVira:
         self.data_train = []
         self.data_test = []
         self._initialize_data()
+        self.prediction_reports = [None] * len(self.data_test)
 
 
         self._crf = None
@@ -117,22 +118,27 @@ class TrainCRFOnVira:
             y_test, y_pred, labels=sorted_labels, digits=4
         )
 
-    def _score_sentences_thread(self, index, results, iob_tagged_datatest, y_pred, **kwargs):
+    def _score_sentences_thread(self, index, results, iob_tagged_datatest, y_pred, start_index, end_index):
         total_entities = 0
         correct_entities = 0
-        for i, iob_tagged_tokens in enumerate(iob_tagged_datatest):
+        for i, iob_tagged_tokens in enumerate(iob_tagged_datatest[start_index: end_index]):
             words, tags, iob_tags = list(zip(*iob_tagged_tokens))
             predicted_iob_tokens = list(zip(words, tags, y_pred[i]))
 
             datatest_entities = get_entities_from_iob_tagged_tokens(iob_tagged_tokens)
             predicted_entities = get_entities_from_iob_tagged_tokens(predicted_iob_tokens)
 
-            if kwargs.get('verbose', False):
-                print("\nACTUAL   :", iob_tagged_tokens)
-                print("         :", datatest_entities)
-                print("         :", len(datatest_entities), "entities")
-                print("PREDICTED:", predicted_iob_tokens)
-                print("         :", predicted_entities)
+            report_str = "================================= Sentence #{} ========================================\n".\
+                format(i)
+            report_str += "> Text: '{}'\n\n".format(" ".join(words))
+            report_str += " ## ACTUAL ##\n"
+            report_str += "> IOB tagged tokens:\n{}\n".format(str(iob_tagged_tokens))
+            report_str += "> Entities:\n{}\n\n".format(datatest_entities)
+            report_str += " ## PREDICTED ##\n"
+            report_str += "> IOB tagged tokens:\n{}\n".format(predicted_iob_tokens)
+            report_str += "> Entities:\n{}\n".format(predicted_entities)
+            report_str += "======================================================================================\n\n"
+            self.prediction_reports[start_index + i] = report_str
 
             total_entities += len(datatest_entities)
             for datatest_entity in datatest_entities:
@@ -215,7 +221,7 @@ class TrainCRFOnVira:
         # save_object(crf, model_file_path)
         # print(" > Model saved in {}".format(model_file_path))
 
-    def test(self):
+    def test(self, **kwargs):
         NUM_THREAD = 4
 
         print("\n=== TESTING {} DATA ===".format(len(self.data_test)))
@@ -241,7 +247,7 @@ class TrainCRFOnVira:
             start_index = i * iob_tagged_datatest_len_per_thread
             end_index = (i + 1) * iob_tagged_datatest_len_per_thread
             threads[i] = Thread(target=self._score_sentences_thread, args=(
-                i, results, self.data_test[start_index: end_index], y_pred[start_index: end_index]
+                i, results, self.data_test, y_pred, start_index, end_index
             ))
             threads[i].start()
 
@@ -263,6 +269,11 @@ class TrainCRFOnVira:
         print(self._bio_classification_report(crf, y_test, y_pred))
         master_end_time = time.time()
         print(" > Testing done in {} seconds".format(master_end_time - master_begin_time))
+        report_path = kwargs.get('report_path', 'report.txt')
+        with open(report_path, 'w') as report_file:
+            for prediction_report in self.prediction_reports:
+                report_file.write(prediction_report)
+        print(" > Report file saved in {}".format(report_path))
 
 
 if __name__ == "__main__":
@@ -279,4 +290,7 @@ if __name__ == "__main__":
     """
     vira_trainer.train()
     # vira_trainer.train_with_RandomizeSearchCV()
-    vira_trainer.test()
+    vira_trainer.test(
+        print_to_text=True,
+        report_path='report.txt'
+    )

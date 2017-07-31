@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4edf6f3d-8209-45cb-ac62-d259f4c6af44" name="Default" comment="">
+    <list default="true" id="4edf6f3d-8209-45cb-ac62-d259f4c6af44" name="Default" comment="Added feature to save report to text">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainCRFOnVira.py" afterPath="$PROJECT_DIR$/TrainCRFOnVira.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ViraAdapter.py" afterPath="$PROJECT_DIR$/ViraAdapter.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sklearn_crfsuite_driver.py" afterPath="$PROJECT_DIR$/sklearn_crfsuite_driver.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sklearn_crfsuite_driver.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sklearn_crfsuite_driver.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sklearn_crfsuite_driver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="246" column="41" lean-forward="false" selection-start-line="246" selection-start-column="41" selection-end-line="246" selection-end-column="41" />
+            <state relative-caret-position="126">
+              <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="121" selection-end-column="55" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -34,8 +35,8 @@
       <file leaf-file-name="ViraAdapter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ViraAdapter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-210">
-              <caret line="78" column="48" lean-forward="false" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
+            <state relative-caret-position="244">
+              <caret line="55" column="9" lean-forward="false" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -43,14 +44,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrainCRFOnVira.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TrainCRFOnVira.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TrainCRFOnVira.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="280" column="43" lean-forward="false" selection-start-line="280" selection-start-column="43" selection-end-line="280" selection-end-column="43" />
+            <state relative-caret-position="442">
+              <caret line="142" column="52" lean-forward="true" selection-start-line="142" selection-start-column="52" selection-end-line="142" selection-end-column="52" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="report.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/report.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1530">
+              <caret line="85" column="22" lean-forward="false" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -134,12 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pos_tag</find>
-      <find>save_</find>
-      <find>Text(</find>
-      <find>enamex_file</find>
-      <find>print(self.</find>
-      <find>print(</find>
       <find>to_data</find>
       <find>test</find>
       <find>my</find>
@@ -164,6 +169,12 @@
       <find>train_with_randomize</find>
       <find>n_iter</find>
       <find>best cv score</find>
+      <find>my_mod</find>
+      <find>what the</find>
+      <find>what the cla</find>
+      <find>start_index</find>
+      <find>===========</find>
+      <find>Actual</find>
     </findStrings>
     <replaceStrings>
       <replace>obj/random/</replace>
@@ -187,9 +198,10 @@
         <option value="$PROJECT_DIR$/ViraToIOBAdapter/ViraToIOBAdapter.py" />
         <option value="$PROJECT_DIR$/enamexDecoder.py" />
         <option value="$PROJECT_DIR$/ViraAdapter/ViraAdapter.py" />
-        <option value="$PROJECT_DIR$/ViraAdapter.py" />
-        <option value="$PROJECT_DIR$/TrainCRFOnVira.py" />
         <option value="$PROJECT_DIR$/sklearn_crfsuite_driver.py" />
+        <option value="$PROJECT_DIR$/ViraAdapter.py" />
+        <option value="$PROJECT_DIR$/report.txt" />
+        <option value="$PROJECT_DIR$/TrainCRFOnVira.py" />
       </list>
     </option>
   </component>
@@ -334,6 +346,14 @@
       <option name="presentableId" value="Default" />
       <updated>1500443204654</updated>
     </task>
+    <task id="LOCAL-00001" summary="Modified train and test data selection process (now uses train data percentages instead of the actual size in TrainCRFOnVira's constructor)">
+      <created>1501476619438</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1501476619438</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -392,21 +412,15 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Modified train and test data selection process (now uses train data percentages instead of the actual size in TrainCRFOnVira's constructor)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified train and test data selection process (now uses train data percentages instead of the actual size in TrainCRFOnVira's constructor)" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mitie_driver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1386">
@@ -839,32 +853,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sklearn_crfsuite_driver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="121" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ViraAdapter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="78" column="48" lean-forward="false" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
+        <state relative-caret-position="244">
+          <caret line="55" column="9" lean-forward="false" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TrainCRFOnVira.py">
+    <entry file="file://$PROJECT_DIR$/report.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="280" column="43" lean-forward="false" selection-start-line="280" selection-start-column="43" selection-end-line="280" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1530">
+          <caret line="85" column="22" lean-forward="false" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sklearn_crfsuite_driver.py">
+    <entry file="file://$PROJECT_DIR$/TrainCRFOnVira.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="246" column="41" lean-forward="false" selection-start-line="246" selection-start-column="41" selection-end-line="246" selection-end-column="41" />
+        <state relative-caret-position="442">
+          <caret line="142" column="52" lean-forward="true" selection-start-line="142" selection-start-column="52" selection-end-line="142" selection-end-column="52" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>

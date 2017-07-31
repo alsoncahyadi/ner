@@ -9,6 +9,7 @@ ENAMEX_FILE_NAME = 'enamex_file.txt'
 
 
 class ViraAdapter:
+
     def __init__(self):
         self.iob_sentences = []
         self.enamex_string = ""
@@ -49,7 +50,6 @@ class ViraAdapter:
             enamex_string += "\n"
         self.enamex_string = enamex_string
         return enamex_string
-
 
     def jsonfile2enamexstring(self, file_path):
         print("Converting Json File => Enamex String")
