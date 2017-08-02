@@ -36,7 +36,10 @@ class ViraAdapter:
             for i, character in enumerate(json_datum['text']):
                 if currently_processed_entity:
                     if (i == currently_processed_entity['start']):
-                        enamex_string += '<ENAMEX TYPE="{}">'.format(currently_processed_entity['entity'])
+                        named_entity_label = currently_processed_entity['entity']
+                        if currently_processed_entity.get('role'):
+                            named_entity_label += " | " + currently_processed_entity['role'] #+ "</ROLE>"
+                        enamex_string += '<ENAMEX TYPE="{}">'.format(named_entity_label)
 
                 enamex_string += character
 
