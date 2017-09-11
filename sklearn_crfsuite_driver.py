@@ -236,20 +236,20 @@ def test(data_test, model_file_path, feature_detector, **kwargs):
 if __name__ == "__main__":
     # gmb_iob_triads = load_object(GMB_IOB_TRIAD_PATH)
 
-    train_size = 400
-    test_size = 80
-    # data_train = load_object(GMB_IOB_TRIAD_PATH)[:7000]
-    # data_test = load_object(GMB_RANDOM_2000_TEST_PATH)
+    train_size = 5000
+    test_size = 2000
+    data_train = load_object(GMB_RANDOM_5000_TRAIN_PATH)
+    data_test = load_object(GMB_RANDOM_2000_TEST_PATH)
 
-    data_train = load_object(ID_IOB_TRIAD_PATH)[:train_size]
-    data_test = load_object(ID_IOB_TRIAD_PATH)[train_size : test_size + train_size]
+    # data_train = load_object(ID_IOB_TRIAD_PATH)[:train_size]
+    # data_test = load_object(ID_IOB_TRIAD_PATH)[train_size : test_size + train_size]
 
     # data_train = list(nltk.corpus.conll2000.iob_sents('train.txt'))
     # data_test = list(nltk.corpus.conll2000.iob_sents('test.txt'))
     # train_size = len(data_train)
     # test_size = len(data_test)
 
-    model_file_path = 'obj/id/sklearn-5fold50-no+1.crfsuite'.format(train_size, test_size)
-    train(data_train, model_file_path)
-    k_fold_validation(data_train, model_file_path, k=5, n_iter = 75)
+    model_file_path = 'obj/random/gmb_random_5000_sklearn_4fold25.crfsuite'.format(train_size, test_size)
+    # train(data_train, model_file_path)
+    # k_fold_validation(data_train, model_file_path, k=5, n_iter = 75)
     test(data_test, model_file_path, ner_features)

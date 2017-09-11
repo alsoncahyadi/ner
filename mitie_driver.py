@@ -83,8 +83,10 @@ def mitieentity2myentity(raw_entity, tokens):
 print("Done importing! ! !\n")
 
 # data = load_gmb_corpus()[5000:1000]
-data_train = load_object(ID_IOB_TRIAD_PATH)[:400]
-data_test = load_object(ID_IOB_TRIAD_PATH)[400:480]
+# data_train = load_object(ID_IOB_TRIAD_PATH)[:400]
+# data_test = load_object(ID_IOB_TRIAD_PATH)[400:480]
 
-train(data_train, "id")
+data_test = load_object(GMB_RANDOM_2000_TEST_PATH)
+
+# train(data_train, "id")
 test(data_test)
